@@ -34,3 +34,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
+
+.modal-body {
+  font-size: 1.1rem;
+}

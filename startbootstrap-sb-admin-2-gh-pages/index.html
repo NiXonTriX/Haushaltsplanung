@@ -245,7 +245,109 @@
           </div>
 
           <div class="row">
+            <div class="col-xl-8 col-lg-12 mb-4">
+              <div class="card shadow mb-4 h-100">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <div>
+                    <h6 class="m-0 font-weight-bold text-primary">Aktuelle Buchungen</h6>
+                    <small class="text-muted">Letzte Ein- und Ausgaben aus dem Haushaltsbuch</small>
+                  </div>
+                  <a href="booking-new.html" class="btn btn-primary btn-sm" aria-label="Neue Buchung anlegen">
+                    <i class="fas fa-plus mr-1" aria-hidden="true"></i>
+                    Buchung anlegen
+                  </a>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-hover mb-0 align-middle">
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col">Datum</th>
+                          <th scope="col">Beschreibung</th>
+                          <th scope="col" class="text-right">Betrag</th>
+                          <th scope="col">Kategorien</th>
+                          <th scope="col">Einnahme/Ausgabe</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>15.02.2025</td>
+                          <td class="font-weight-semibold">Gehalt — Alex</td>
+                          <td class="text-success font-weight-bold text-right">€ 3.200,00</td>
+                          <td>
+                            <span class="badge badge-success">Einkommen</span>
+                            <span class="badge badge-light text-dark">Gehalt</span>
+                          </td>
+                          <td><span class="badge badge-pill badge-success">Einnahme</span></td>
+                        </tr>
+                        <tr>
+                          <td>12.02.2025</td>
+                          <td class="font-weight-semibold">Wocheneinkauf Familie</td>
+                          <td class="text-danger font-weight-bold text-right">€ 145,30</td>
+                          <td>
+                            <span class="badge badge-warning">Variabel</span>
+                            <span class="badge badge-light text-dark">Lebensmittel</span>
+                          </td>
+                          <td><span class="badge badge-pill badge-danger">Ausgabe</span></td>
+                        </tr>
+                        <tr>
+                          <td>08.02.2025</td>
+                          <td class="font-weight-semibold">Stromabschlag</td>
+                          <td class="text-danger font-weight-bold text-right">€ 92,00</td>
+                          <td>
+                            <span class="badge badge-info">Fixkosten</span>
+                            <span class="badge badge-light text-dark">Energie</span>
+                          </td>
+                          <td><span class="badge badge-pill badge-danger">Ausgabe</span></td>
+                        </tr>
+                        <tr>
+                          <td>05.02.2025</td>
+                          <td class="font-weight-semibold">Nebenkostenrückerstattung</td>
+                          <td class="text-success font-weight-bold text-right">€ 180,00</td>
+                          <td>
+                            <span class="badge badge-primary">Rückerstattung</span>
+                            <span class="badge badge-light text-dark">Wohnen</span>
+                          </td>
+                          <td><span class="badge badge-pill badge-success">Einnahme</span></td>
+                        </tr>
+                        <tr>
+                          <td>02.02.2025</td>
+                          <td class="font-weight-semibold">Fitnessstudio</td>
+                          <td class="text-danger font-weight-bold text-right">€ 39,90</td>
+                          <td>
+                            <span class="badge badge-secondary">Abo</span>
+                            <span class="badge badge-light text-dark">Gesundheit</span>
+                          </td>
+                          <td><span class="badge badge-pill badge-danger">Ausgabe</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-xl-4 col-lg-12 mb-4">
+              <div class="card shadow mb-4 h-100">
+                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Buchungstypen im Überblick</h6>
+                  <span class="badge badge-primary">neu</span>
+                </div>
+                <div class="card-body">
+                  <p class="text-gray-600">Unterscheide Einnahmen und Ausgaben farblich, um sofort zu erkennen, welche Buchungen dein Budget entlasten oder belasten.</p>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-center">
+                      <span class="badge badge-pill badge-success mr-2">Einnahme</span>
+                      <span class="text-gray-700">z. B. Gehalt, Erstattungen, Nebeneinkünfte</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <span class="badge badge-pill badge-danger mr-2">Ausgabe</span>
+                      <span class="text-gray-700">z. B. Miete, Einkäufe, Verträge oder Freizeit</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
