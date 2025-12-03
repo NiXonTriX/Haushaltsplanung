@@ -17,7 +17,7 @@
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
   <link href="css/household.css" rel="stylesheet">
   <link href="css/household.min.css" rel="stylesheet">
 </head>
@@ -262,9 +262,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-area">
-                    <img src="img/dashboard-placeholders.svg" alt="Diagramm Platzhalter" class="img-fluid rounded shadow-sm">
-                  </div>
+                  <div class="chart-area" id="category-groups-chart" aria-label="Diagramm Ausgaben nach Kategoriegruppen"></div>
                 </div>
               </div>
             </div>
@@ -392,8 +390,10 @@
 
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/household.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+  <script src="js/sb-admin-2.js"></script>
+  <script src="js/household.js"></script>
 
 </body>
 

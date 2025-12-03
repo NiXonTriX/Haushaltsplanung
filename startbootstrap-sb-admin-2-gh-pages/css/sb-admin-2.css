@@ -9908,8 +9908,8 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background: #22C1C3;
-  background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  background: #0c6a6b;
+  background: linear-gradient(0deg,rgba(12, 106, 107, 1) 0%, rgba(82, 58, 6, 1) 65%);
   background-size: cover;
 }
 
