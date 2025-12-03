@@ -1,0 +1,8 @@
+<svg width="800" height="360" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Monatsreport Platzhalter</title>
+  <desc id="desc">Liniendiagramm Platzhalter für monatliche Auswertungen</desc>
+  <rect width="800" height="360" fill="#f8f9fc" stroke="#e3e6f0" />
+  <polyline points="60,270 160,240 260,200 360,230 460,160 560,200 660,150 760,180" fill="none" stroke="#4e73df" stroke-width="6" opacity="0.5" />
+  <polyline points="60,250 160,220 260,230 360,180 460,210 560,180 660,210 760,170" fill="none" stroke="#1cc88a" stroke-width="6" opacity="0.5" />
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#6c757d" font-family="Nunito, Arial, sans-serif" font-size="20">Auswertung folgt nach Datenimport</text>
+</svg>

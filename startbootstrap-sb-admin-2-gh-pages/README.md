@@ -31,6 +31,20 @@ To begin using this template, choose one of the following options to get started
 
 After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
+## Haushaltsplaner-Anpassungen
+
+Für die Haushaltsplanung wurde das Template modularisiert und thematisch neu strukturiert:
+
+* Gemeinsame Layout-Bausteine (Head, Sidebar, Topbar, Footer, Scripts) liegen unter `src/partials`.
+* Fachseiten für Dashboard, Buchungen, Kategorien, Konten, Personen/Tiere, Empfänger und Auswertungen liegen unter `src/pages`.
+* Ein leichtes Build-Skript setzt die Teile ohne zusätzliche Abhängigkeiten zu statischen HTML-Dateien zusammen:
+
+```bash
+node scripts/build-html.js
+```
+
+Alternativ erzeugt der Gulp-Task `gulp html` dieselben Seiten, sobald die Abhängigkeiten installiert wurden.
+
 ### Gulp Tasks
 
 * `gulp` the default task that builds everything

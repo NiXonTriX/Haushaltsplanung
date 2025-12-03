@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Haushaltsplaner Übersicht">
+  <meta name="author" content="Haushaltsplaner">
+
+  <title>Haushaltsplaner | Konten</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/household.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-page="accounts">
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-wallet" aria-hidden="true"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Haushalt</div>
+      </a>
+
+      <hr class="sidebar-divider my-0">
+
+      <li class="nav-item" data-page="dashboard">
+        <a class="nav-link" href="index.html" data-page="dashboard">
+          <i class="fas fa-fw fa-chart-pie" aria-hidden="true"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <li class="nav-item" data-page="bookings">
+        <a class="nav-link" href="bookings.html" data-page="bookings">
+          <i class="fas fa-fw fa-list-ul" aria-hidden="true"></i>
+          <span>Buchungen</span></a>
+      </li>
+
+      <li class="nav-item" data-page="categories">
+        <a class="nav-link" href="categories.html" data-page="categories">
+          <i class="fas fa-fw fa-tags" aria-hidden="true"></i>
+          <span>Kategorien</span></a>
+      </li>
+
+      <li class="nav-item" data-page="accounts">
+        <a class="nav-link" href="accounts.html" data-page="accounts">
+          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
+          <span>Konten</span></a>
+      </li>
+
+      <li class="nav-item" data-page="people">
+        <a class="nav-link" href="people.html" data-page="people">
+          <i class="fas fa-fw fa-user-friends" aria-hidden="true"></i>
+          <span>Personen &amp; Tiere</span></a>
+      </li>
+
+      <li class="nav-item" data-page="payees">
+        <a class="nav-link" href="payees.html" data-page="payees">
+          <i class="fas fa-fw fa-store" aria-hidden="true"></i>
+          <span>Empfänger</span></a>
+      </li>
+
+      <li class="nav-item" data-page="reports">
+        <a class="nav-link" href="reports.html" data-page="reports">
+          <i class="fas fa-fw fa-chart-line" aria-hidden="true"></i>
+          <span>Auswertungen</span></a>
+      </li>
+
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <div class="text-center d-none d-md-inline">
+        <button 
+          class="rounded-circle border-0" 
+          id="sidebarToggle" 
+          type="button" 
+          aria-label="Sidebar ein- oder ausklappen"></button>
+      </div>
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <button 
+              id="sidebarToggleTop" 
+              class="btn btn-link d-md-none rounded-circle mr-3"
+              type="button"
+              aria-label="Sidebar ein- oder ausklappen">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+
+          <form class="form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input 
+                type="text" 
+                class="form-control bg-light border-0 small" 
+                placeholder="Schnellsuche in Buchungen"
+                aria-label="Schnellsuche" 
+                aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button 
+                  class="btn btn-primary" 
+                  type="button"
+                  aria-label="Suchen">
+                  <i class="fas fa-search fa-sm" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a 
+                class="nav-link dropdown-toggle" 
+                href="#" 
+                id="searchDropdown" 
+                role="button" 
+                data-toggle="dropdown"
+                aria-haspopup="true" 
+                aria-expanded="false"
+                aria-label="Suchmenü öffnen">
+                <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+
+              <div 
+                class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" 
+                aria-labelledby="searchDropdown">
+
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input 
+                      type="text" 
+                      class="form-control bg-light border-0 small" 
+                      placeholder="Schnellsuche"
+                      aria-label="Schnellsuche">
+                    <div class="input-group-append">
+                      <button 
+                        class="btn btn-primary" 
+                        type="button"
+                        aria-label="Suchen">
+                        <i class="fas fa-search fa-sm" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <li class="nav-item dropdown no-arrow">
+              <a 
+                class="nav-link dropdown-toggle" 
+                href="#" 
+                id="userDropdown" 
+                role="button" 
+                data-toggle="dropdown"
+                aria-haspopup="true" 
+                aria-expanded="false"
+                aria-label="Benutzermenü öffnen">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Haushalt</span>
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </a>
+              <div 
+                class="dropdown-menu dropdown-menu-right shadow animated--grow-in" 
+                aria-labelledby="userDropdown">
+
+                <a class="dropdown-item" href="accounts.html">
+                  <i class="fas fa-university fa-sm fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                  Kontoübersicht
+                </a>
+
+                <a class="dropdown-item" href="people.html">
+                  <i class="fas fa-users fa-sm fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                  Personen &amp; Tiere
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="reports.html">
+                  <i class="fas fa-chart-line fa-sm fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                  Auswertungen
+                </a>
+
+              </div>
+            </li>
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+
+        <div class="container-fluid">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div>
+              <h1 class="h3 mb-0 text-gray-800">Konten</h1>
+              <p class="text-muted mb-0">Übersicht aller Haushaltskonten mit Salden und zugeordneten Personen</p>
+            </div>
+
+            <button 
+              class="btn btn-primary btn-sm"
+              type="button"
+              aria-label="Neues Konto anlegen">
+              <i class="fas fa-plus mr-1" aria-hidden="true"></i> 
+              Konto anlegen
+            </button>
+
+          </div>
+
+          <div class="row">
+
+            <!-- (Karten bleiben unverändert – keine Buttons) -->
+
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Kontodetails</h6>
+              <a href="bookings.html" class="small">Buchungen ansehen</a>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>Konto</th>
+                      <th>Typ</th>
+                      <th>Zugeordnet</th>
+                      <th>IBAN / Referenz</th>
+                      <th class="text-right">Saldo</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <!-- Button fix in Tabelle -->
+                    <tr>
+                      <td>Gemeinschaftskonto</td>
+                      <td>Giro</td>
+                      <td>Alex, Jamie</td>
+                      <td>DE11 1001 1001 2626</td>
+                      <td class="text-right font-weight-bold text-success">€ 2.350,00</td>
+                      <td>
+                        <button 
+                          class="btn btn-outline-secondary btn-sm" 
+                          type="button"
+                          aria-label="Gemeinschaftskonto bearbeiten">
+                          Bearbeiten
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Kreditkarte</td>
+                      <td>Kredit</td>
+                      <td>Jamie</td>
+                      <td>**** 6621</td>
+                      <td class="text-right font-weight-bold text-danger">€ -320,00</td>
+                      <td>
+                        <button 
+                          class="btn btn-outline-secondary btn-sm" 
+                          type="button"
+                          aria-label="Kreditkarte bearbeiten">
+                          Bearbeiten
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Rücklagen</td>
+                      <td>Sparen</td>
+                      <td>Alex</td>
+                      <td>DE55 7007 0024 1180</td>
+                      <td class="text-right font-weight-bold text-success">€ 8.100,00</td>
+                      <td>
+                        <button 
+                          class="btn btn-outline-secondary btn-sm" 
+                          type="button"
+                          aria-label="Rücklagen bearbeiten">
+                          Bearbeiten
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Haustierkonto</td>
+                      <td>Spezial</td>
+                      <td>Bella (Hund)</td>
+                      <td>Bar</td>
+                      <td class="text-right font-weight-bold text-info">€ 430,00</td>
+                      <td>
+                        <button 
+                          class="btn btn-outline-secondary btn-sm" 
+                          type="button"
+                          aria-label="Haustierkonto bearbeiten">
+                          Bearbeiten
+                        </button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Haushaltsplaner &copy; Dein Haushalt 2025</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <a class="scroll-to-top rounded" href="#page-top" aria-label="Nach oben scrollen">
+    <i class="fas fa-angle-up" aria-hidden="true"></i>
+  </a>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/household.min.js"></script>
+
+</body>
+</html>

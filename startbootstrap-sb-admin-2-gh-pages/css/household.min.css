@@ -1,0 +1,5 @@
+.page-heading{display:flex;flex-direction:column}
+.category-row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #e3e6f0}
+.category-row:last-child{border-bottom:0}.icon-circle{width:42px;height:42px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.list-group-item .badge{min-width:58px;text-align:center}
+.table thead th{font-size:.85rem;text-transform:uppercase;letter-spacing:.02em}

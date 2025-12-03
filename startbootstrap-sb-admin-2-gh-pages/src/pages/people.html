@@ -1,0 +1,79 @@
+@@include('../partials/document-start.html', {"title": "Personen & Tiere", "page": "people"})
+@@include('../partials/sidebar.html')
+@@include('../partials/content-start.html')
+@@include('../partials/topbar.html')
+
+        <div class="container-fluid">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div>
+              <h1 class="h3 mb-0 text-gray-800">Personen &amp; Tiere</h1>
+              <p class="text-muted mb-0">Zuweisung von Buchungen, Konten und Kostenanteilen zu Haushaltsmitgliedern</p>
+            </div>
+            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-plus mr-1"></i> Mitglied hinzufügen</a>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="icon-circle bg-primary text-white mr-3"><i class="fas fa-user"></i></div>
+                    <div>
+                      <div class="font-weight-bold">Alex</div>
+                      <div class="text-gray-600 small">Anteil 60% · Konten: Gemeinschaft, Rücklagen</div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 small mb-0">Standardkonten und Kategorien können genutzt werden, um Buchungen automatisch
+                    vorzubelegen.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="icon-circle bg-success text-white mr-3"><i class="fas fa-user"></i></div>
+                    <div>
+                      <div class="font-weight-bold">Jamie</div>
+                      <div class="text-gray-600 small">Anteil 40% · Konten: Gemeinschaft, Kreditkarte</div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 small mb-0">Anteile steuern die Aufteilung gemeinsamer Kosten und sind in Auswertungen sichtbar.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="icon-circle bg-warning text-white mr-3"><i class="fas fa-paw"></i></div>
+                    <div>
+                      <div class="font-weight-bold">Bella (Hund)</div>
+                      <div class="text-gray-600 small">Anteil 0% · Konto: Haustierkonto</div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 small mb-0">Haustiere sind als eigene Kostenstellen abbildbar und können Kategorien wie Futter oder Tierarzt nutzen.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+              <h6 class="m-0 font-weight-bold text-primary">Standardzuordnungen</h6>
+              <a href="bookings.html" class="small">Zu den Buchungen</a>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Jede Buchung erhält eine Person oder ein Tier, um Anteile zu berechnen.</li>
+                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Standardkonten pro Person erleichtern die automatische Auswahl beim Import.</li>
+                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Haustiere können von Kategorien wie Gesundheit, Futter und Ausstattung profitieren.</li>
+                <li class="mb-0"><i class="fas fa-check text-success mr-2"></i> Verknüpfte Buchungen erben die Personenzuordnung, solange sie nicht überschrieben wird.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+@@include('../partials/content-end.html')
+@@include('../partials/scripts.html')
+@@include('../partials/document-end.html')

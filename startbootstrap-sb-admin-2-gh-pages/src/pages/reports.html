@@ -1,0 +1,76 @@
+@@include('../partials/document-start.html', {"title": "Auswertungen", "page": "reports"})
+@@include('../partials/sidebar.html')
+@@include('../partials/content-start.html')
+@@include('../partials/topbar.html')
+
+        <div class="container-fluid">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div>
+              <h1 class="h3 mb-0 text-gray-800">Auswertungen</h1>
+              <p class="text-muted mb-0">Kennzahlen und Vergleiche basierend auf Kategorien, Personen und Konten</p>
+            </div>
+            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-download mr-1"></i> Export als CSV</a>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 mb-4">
+              <div class="card shadow h-100">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                  <h6 class="m-0 font-weight-bold text-primary">Monatliche Entwicklung</h6>
+                  <span class="badge badge-info">Trends</span>
+                </div>
+                <div class="card-body">
+                  <p class="text-gray-600">Verfolge Ausgaben, Fixkosten und variable Kosten pro Monat.</p>
+                  <img src="img/reports-monthly-placeholder.svg" alt="Linienchart Platzhalter" class="img-fluid rounded shadow-sm">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card shadow h-100">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                  <h6 class="m-0 font-weight-bold text-primary">Anteile nach Person</h6>
+                  <span class="badge badge-secondary">Vergleich</span>
+                </div>
+                <div class="card-body">
+                  <p class="text-gray-600">Aufteilung der Kosten nach Personen oder Tieren inklusive Kontenanteile.</p>
+                  <img src="img/reports-person-placeholder.svg" alt="Balkendiagramm Platzhalter" class="img-fluid rounded shadow-sm">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+              <h6 class="m-0 font-weight-bold text-primary">Quick-Filter</h6>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Zeitraum wählen">
+                <button type="button" class="btn btn-outline-secondary active">Aktuell</button>
+                <button type="button" class="btn btn-outline-secondary">Letzte 6 Monate</button>
+                <button type="button" class="btn btn-outline-secondary">Letzte 12 Monate</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="small text-gray-600">Höchste Kategorie</div>
+                  <div class="h5 font-weight-bold text-gray-800">Wohnen</div>
+                  <div class="text-gray-500">€ 1.100 · 2 Buchungen</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="small text-gray-600">Größter Empfänger</div>
+                  <div class="h5 font-weight-bold text-gray-800">Hausverwaltung</div>
+                  <div class="text-gray-500">€ 1.100 · Fixkosten</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="small text-gray-600">Höchster Saldo</div>
+                  <div class="h5 font-weight-bold text-gray-800">Rücklagen</div>
+                  <div class="text-gray-500">€ 8.100 · Konto</div>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-0">Weitere Filter wie Person, Kategorie, Empfänger oder Verknüpfung kannst du später hier ergänzen.</p>
+            </div>
+          </div>
+        </div>
+
+@@include('../partials/content-end.html')
+@@include('../partials/scripts.html')
+@@include('../partials/document-end.html')
