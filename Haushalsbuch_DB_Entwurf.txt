@@ -1,21 +1,22 @@
-Die Buchungen sollen folgendes enthalten:  
+Ziel: Buchungen von Personen/Tieren im Haushalt Kategorien, Konten und Empfängern zuordnen und optional zusammenhängende Buchungen verknüpfen.
 
-Unterscheidung Fixkosten,  
+Kernobjekte
+- persons: Personen/Tiere, die Ausgaben verursachen (display_name, Aktiv-Status, Notizen).
+- accounts: Zahlungsmittel/Konten wie Giro, Sparbuch, PayPal, Kreditkarte (account_type, institution, optionale Person-Zuordnung).
+- categories: zweistufige Kategorien (parent_id verweist auf Oberkategorie, UNIQUE auf parent_id + name verhindert Duplikate).
+- payees: Empfänger inkl. IBAN/BIC/Bankname/Notiz.
+- bookings: einzelne Buchungen mit Datum, Betrag (amount_cents + currency), cost_type (fixed | variable | unexpected), Titel/Beschreibung sowie Referenzen auf category/account/person/payee.
+- booking_links: optionale Verknüpfung zusammenhängender Buchungen (z. B. Ratenzahlung, Rückerstattung, Storno, Anpassung), bidirektional über zwei booking-IDs und relation_type.
 
-variable Kosten (zB Benzinkosten, Lebensmittel), unerwartete Kosten zB Autoreparatur,  
+Wichtige Regeln
+- Beträge werden in Cent gespeichert (BIGINT) und mit 3-stelliger Währung (Standard EUR) versehen.
+- Kategorie-Hierarchie ist maximal zweistufig; eine View (vw_category_levels) zeigt Einträge mit Großeltern an, um Verletzungen zu finden.
+- Alle Fremdschlüssel erlauben ON DELETE SET NULL außer booking_links (Cascade), damit historische Buchungen bestehen bleiben.
+- Indexe auf Datum, Kategorie, Konto, Person und Empfänger beschleunigen Auswertungen.
 
-eine zweistufige Kategorie,  
+Siehe db/schema.sql für ausführliches MySQL-DDL.
 
-eine Zuordnung von unterschiedlichen Konten (Paypal. Giro, Sparbuch),  
-
-eine Zuordnung von unterschiedlichen Personen (Verursacher),  
-
-Bankkonto des Empfängers,  
-
-eine Bezeichnung des Empfängers, ein Kommentar, 
-
- 
-
-OPTIONAL 
-
-eine Verknüfungstabelle für zusammenhängende Buchungen zB auf eine Buchung kann eine oder mehrere Gutschriften oder folgerechnungen folgen, 
+Schema einspielen:
+- Datenbank anlegen/auswählen (z. B. `CREATE DATABASE IF NOT EXISTS haushaltsplaner; USE haushaltsplaner;`).
+- Dann `mysql -u <user> -p haushaltsplaner < db/schema.sql` im Repo-Wurzelverzeichnis ausführen oder im `mysql`-Prompt `SOURCE /pfad/zum/repo/db/schema.sql;` nutzen.
+- Details siehe `db/README.md`.
