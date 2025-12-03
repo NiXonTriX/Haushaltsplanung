@@ -45,6 +45,14 @@ node scripts/build-html.js
 
 Alternativ erzeugt der Gulp-Task `gulp html` dieselben Seiten, sobald die Abhängigkeiten installiert wurden.
 
+### Farben und Styles anpassen
+
+* Für schnelle Farbanpassungen kannst du direkt die Datei `css/household.css` bearbeiten. Die wichtigsten Haushalts-spezifischen
+  Akzente sind dort gebündelt und werden ohne weiteren Build-Schritt geladen.
+* Falls du lieber mit SCSS arbeitest, findest du die Quell-Dateien unter `scss/`. Passe dort z. B. `_variables.scss` oder
+  `household.scss` an und führe danach `npm install` sowie `npm run build` aus, damit die Änderungen nach `css/` kompiliert
+  werden.
+
 ### Gulp Tasks
 
 * `gulp` the default task that builds everything
