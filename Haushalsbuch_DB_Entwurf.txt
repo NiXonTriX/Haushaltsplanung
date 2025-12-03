@@ -1,0 +1,21 @@
+Die Buchungen sollen folgendes enthalten:  
+
+Unterscheidung Fixkosten,  
+
+variable Kosten (zB Benzinkosten, Lebensmittel), unerwartete Kosten zB Autoreparatur,  
+
+eine zweistufige Kategorie,  
+
+eine Zuordnung von unterschiedlichen Konten (Paypal. Giro, Sparbuch),  
+
+eine Zuordnung von unterschiedlichen Personen (Verursacher),  
+
+Bankkonto des Empfängers,  
+
+eine Bezeichnung des Empfängers, ein Kommentar, 
+
+ 
+
+OPTIONAL 
+
+eine Verknüfungstabelle für zusammenhängende Buchungen zB auf eine Buchung kann eine oder mehrere Gutschriften oder folgerechnungen folgen, 
