@@ -1,20 +1,24 @@
 // Chart-Instanz erstellen
-var chart = echarts.init(document.getElementById('main'));
+const sankeyMainEl = document.getElementById('main');
 
 // Beispiel: Sankey-Diagramm-Daten für Einnahmen und Ausgaben
-var option = {
+if (sankeyMainEl) {
+  const chart = echarts.init(sankeyMainEl);
+
+  // Beispiel: Sankey-Diagramm-Daten für Einnahmen und Ausgaben
+  const option = {
     title: {
-    text: 'Einnahmen & Ausgaben Sankey-Diagramm',
-    subtext: 'Beispieldaten',
-    left: 'center'
+      text: 'Einnahmen & Ausgaben Sankey-Diagramm',
+      subtext: 'Beispieldaten',
+      left: 'center'
     },
     tooltip: {
-    trigger: 'item'
+        trigger: 'item'
     },
     series: [{
-    type: 'sankey',
-    layout: 'none',
-    data: [
+        type: 'sankey',
+        layout: 'none',
+        data: [
         { name: 'Aktueller Kontostand', itemStyle: { color: '#28C76F' } },
         { name: 'Gehalt', itemStyle: { color: '#8bd3e6' } },
         { name: 'Nebenjob', itemStyle: { color: '#8bd3e6' } },
@@ -47,5 +51,6 @@ var option = {
     }]
 };
 
-// Option zuweisen und Diagramm rendern
-chart.setOption(option);
+  // Option zuweisen und Diagramm rendern
+  chart.setOption(option);
+}

@@ -322,6 +322,34 @@
 
           </div>
 
+
+          <!-- Sankey Chart Container (in deiner HTML-Struktur) -->
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 mb-4">
+              <div class="card shadow mb-4 h-100">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Finanzfluss Übersicht</h6>
+                  <!-- Sankey Chart Filter!!! -->
+                  <div class="row mb-2">
+                  <div class="col text-right">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Filter">
+                      <button class="btn btn-outline-primary filter-btn active" data-filter="all">Alle</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Fixkosten">Fixkosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Variable Kosten">Variable Kosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Tierkosten">Tierkosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Spezielle Kosten">Spezielle Kosten</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="card-body">
+                  <div id="sankeyChart" class="sankey-responsive" aria-label="Sankey-Diagramm zu Kapitalfluss"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="row">
             <div class="col-xl-8 col-lg-12 mb-4">
               <div class="card shadow mb-4 h-100">
@@ -514,35 +542,9 @@
                 </div>
               </div>
             </div>
-
           </div>
 
 
-          <!-- Sankey Chart Container (in deiner HTML-Struktur) -->
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 mb-4">
-              <div class="card shadow mb-4 h-100">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Finanzfluss Übersicht</h6>
-                  <!-- Sankey Chart Filter!!! -->
-                  <div class="row mb-2">
-                  <div class="col text-right">
-                    <div class="btn-group btn-group-sm" role="group" aria-label="Filter">
-                      <button class="btn btn-outline-primary filter-btn active" data-filter="all">Alle</button>
-                      <button class="btn btn-outline-primary filter-btn" data-filter="Fixkosten">Fixkosten</button>
-                      <button class="btn btn-outline-primary filter-btn" data-filter="Variable Kosten">Variable Kosten</button>
-                      <button class="btn btn-outline-primary filter-btn" data-filter="Tierkosten">Tierkosten</button>
-                      <button class="btn btn-outline-primary filter-btn" data-filter="Spezielle Kosten">Spezielle Kosten</button>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <div class="card-body">
-                  <div id="sankeyChart" class="sankey-responsive" aria-label="Sankey-Diagramm zu Kapitalfluss"></div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="row">
 
@@ -631,7 +633,7 @@
   <script src="js/filter-dropdown.min.js"></script>
   <script src="js/sankey-Graph.min.js"></script>
   <script src="js/sankey-Informations.min.js"></script>
-  <script src="js/sankey-filter.js"></script>
+  <script src="js/sankey-filter.min.js"></script>
 
 </body>
 

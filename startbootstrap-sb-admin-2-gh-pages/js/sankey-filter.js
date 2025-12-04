@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const ctx = document.getElementById("sankeyChart");
+    if (!(ctx instanceof HTMLCanvasElement)) return; // Chart.js benötigt ein Canvas-Element
+
   let chart;
 
 const fullData = [
