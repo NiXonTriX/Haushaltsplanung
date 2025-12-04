@@ -1,1 +1,31 @@
-node_modules
+node_modules########################################
+# Node / NPM
+########################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+########################################
+# Build output (GULP generated)
+########################################
+startbootstrap-sb-admin-2-gh-pages/css/*.css
+startbootstrap-sb-admin-2-gh-pages/css/*.min.css
+startbootstrap-sb-admin-2-gh-pages/js/*.min.js
+startbootstrap-sb-admin-2-gh-pages/vendor/
+
+########################################
+# Maps (wenn du Sourcemaps nutzt)
+########################################
+*.map
+
+########################################
+# System files
+########################################
+.DS_Store
+Thumbs.db
+
+########################################
+# VS Code
+########################################
+.vscode/
