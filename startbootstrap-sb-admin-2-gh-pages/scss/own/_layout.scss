@@ -1,5 +1,48 @@
 .bg-gradient-primary_new {
   background: #0c6a6b !important;
-  background: linear-gradient(0deg,rgba(12, 106, 107, 1) 0%, rgba(82, 58, 6, 1) 65%) !important;
+  background: linear-gradient(0deg,rgba(12, 106, 107, 1) 0%, rgba(82, 58, 6, 1) 80%) !important;
   background-size: cover !important;
+}
+
+
+.border-left-danger {
+  border-left: 0.25rem solid #FD1D1D !important;
+}
+.text-info-danger {
+  color: #FD1D1D !important;
+}
+
+.border-left-orange {
+  border-left: 0.25rem solid #FF9F43 !important;
+}
+.text-info-orange {
+  color: #FF9F43 !important;
+}
+
+.border-left-violett {
+  border-left: 0.25rem solid #8E44AD !important;
+}
+.text-info-violett {
+  color: #8E44AD !important;
+}
+
+.border-left-mint-green {
+  border-left: 0.25rem solid #28C76F !important;
+}
+.text-info-mint-green {
+  color: #28C76F !important;
+}
+
+.border-left-deep-green {
+  border-left: 0.25rem solid #0c6a6b !important;
+}
+.text-info-deep-green {
+  color: #0c6a6b !important;
+}
+
+.border-left-blue {
+  border-left: 0.25rem solid #4e73df !important;
+}
+.text-info-blue {
+  color: #4e73df !important;
 }
