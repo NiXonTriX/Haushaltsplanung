@@ -9,9 +9,9 @@ yarn-error.log*
 ########################################
 # Build output (GULP generated)
 ########################################
-startbootstrap-sb-admin-2-gh-pages/css/*.css
-startbootstrap-sb-admin-2-gh-pages/css/*.min.css
-startbootstrap-sb-admin-2-gh-pages/js/*.min.js
+startbootstrap-sb-admin-2-gh-pages/css/*.css     merge=ours
+startbootstrap-sb-admin-2-gh-pages/css/*.min.css merge=ours
+startbootstrap-sb-admin-2-gh-pages/js/*.min.js   merge=ours
 startbootstrap-sb-admin-2-gh-pages/vendor/
 
 ########################################
