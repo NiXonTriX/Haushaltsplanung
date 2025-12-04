@@ -27,49 +27,68 @@
     const categoryGroupChart = echarts.init(chartContainer);
 
     const option = {
-      angleAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      radiusAxis: {},
-      polar: {},
-      series: [
-        {
-          type: 'bar',
-          data: [1, 2, 3, 4, 3, 5, 1],
-          coordinateSystem: 'polar',
-          name: 'Manuel',
-          stack: 'a',
-          emphasis: {
-            focus: 'series'
-          }
-        },
-        {
-          type: 'bar',
-          data: [2, 4, 6, 1, 3, 2, 1],
-          coordinateSystem: 'polar',
-          name: 'Stefan',
-          stack: 'a',
-          emphasis: {
-            focus: 'series'
-          }
-        },
-        {
-          type: 'bar',
-          data: [1, 2, 3, 4, 1, 2, 5],
-          coordinateSystem: 'polar',
-          name: 'Berkant',
-          stack: 'a',
-          emphasis: {
-            focus: 'series'
-          }
-        }
-      ],
-      legend: {
-        show: true,
-        data: ['Manuel', 'Stefan', 'Berkant']
-      }
-    };
+  title: {
+    text: 'Wochenausgaben in €',
+    left: 'center'
+  },
+
+  tooltip: {
+    trigger: 'item',
+    formatter: (params) => {
+      return `${params.seriesName}<br>${params.name}: ${params.value} €`;
+    }
+  },
+
+  angleAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    axisLabel: {
+      color: '#555'
+    }
+  },
+
+  radiusAxis: {
+    axisLabel: {
+      formatter: '{value} €',
+      color: '#777'
+    }
+  },
+
+  polar: {},
+  series: [
+    {
+      type: 'bar',
+      data: [12.50, 20.10, 8.99, 22.70, 15.30, 11.00, 30.90],
+      coordinateSystem: 'polar',
+      name: 'Manuel',
+      stack: 'a',
+      emphasis: { focus: 'series' }
+    },
+    {
+      type: 'bar',
+      data: [5.99, 12.00, 18.90, 4.25, 9.10, 6.75, 11.20],
+      coordinateSystem: 'polar',
+      name: 'Stefan',
+      stack: 'a',
+      emphasis: { focus: 'series' }
+    },
+    {
+      type: 'bar',
+      data: [10.20, 8.10, 5.70, 12.80, 14.90, 7.40, 16.00],
+      coordinateSystem: 'polar',
+      name: 'Berkant',
+      stack: 'a',
+      emphasis: { focus: 'series' }
+    }
+  ],
+
+  legend: {
+    show: true,
+    data: ['Manuel', 'Stefan', 'Berkant'],
+    bottom: 0
+  }
+};
+
 
     categoryGroupChart.setOption(option);
     window.addEventListener('resize', () => categoryGroupChart.resize());

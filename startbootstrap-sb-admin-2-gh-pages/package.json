@@ -39,7 +39,7 @@
     "jquery": "3.6.0",
     "jquery.easing": "^1.4.1"
   },
-    "devDependencies": {
+  "devDependencies": {
     "browser-sync": "2.26.14",
     "del": "6.0.0",
     "gulp": "4.0.2",
@@ -48,9 +48,10 @@
     "gulp-header": "2.0.9",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "2.0.0",
-    "sass": "^1.79.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "merge-stream": "2.0.0"
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "2.0.0",
+    "sass": "^1.79.0"
   }
 }

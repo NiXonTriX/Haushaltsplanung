@@ -10,6 +10,10 @@
 
   <title>Haushaltsplaner | Dashboard</title>
 
+  <!-- ECharts-Bibliothek einbinden -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link
@@ -179,15 +183,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="row">
+          <div class="row">
 
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-mint-green shadow h-100 py-2">
@@ -256,16 +252,6 @@
           </div>
 
  
-
-
-
-
-
-
-
-
-
-
 
 
           <div class="row">
@@ -344,6 +330,30 @@
                     <h6 class="m-0 font-weight-bold text-primary">Aktuelle Buchungen</h6>
                     <small class="text-muted">Letzte Ein- und Ausgaben aus dem Haushaltsbuch</small>
                   </div>
+
+                <!-- SortierOption -->
+                <div class="btn-group">
+                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" 
+                        type="button" 
+                        id="bookingFilterBtn" 
+                        data-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="false">
+                  <i class="fas fa-filter mr-1"></i>
+                  Sortieren
+                </button>
+
+                <!-- Buchung anlegen -->
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bookingFilterBtn">
+                  <button class="dropdown-item sort-option" data-column="0">Datum</button>
+                  <button class="dropdown-item sort-option" data-column="1">Beschreibung</button>
+                  <button class="dropdown-item sort-option" data-column="2">Betrag</button>
+                  <button class="dropdown-item sort-option" data-column="3">Kategorie</button>
+                  <button class="dropdown-item sort-option" data-column="4">Einnahme/Ausgabe</button>
+                </div>
+              </div>
+
+
                   <a href="booking-new.html" class="btn btn-primary btn-sm" aria-label="Neue Buchung anlegen">
                     <i class="fas fa-plus mr-1" aria-hidden="true"></i>
                     Buchung anlegen
@@ -440,6 +450,9 @@
                 </div>
               </div>
             </div>
+
+
+
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -502,6 +515,33 @@
               </div>
             </div>
 
+          </div>
+
+
+          <!-- Sankey Chart Container (in deiner HTML-Struktur) -->
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 mb-4">
+              <div class="card shadow mb-4 h-100">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Finanzfluss Übersicht</h6>
+                  <!-- Sankey Chart Filter!!! -->
+                  <div class="row mb-2">
+                  <div class="col text-right">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Filter">
+                      <button class="btn btn-outline-primary filter-btn active" data-filter="all">Alle</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Fixkosten">Fixkosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Variable Kosten">Variable Kosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Tierkosten">Tierkosten</button>
+                      <button class="btn btn-outline-primary filter-btn" data-filter="Spezielle Kosten">Spezielle Kosten</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="card-body">
+                  <div id="sankeyChart" class="sankey-responsive" aria-label="Sankey-Diagramm zu Kapitalfluss"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="row">
@@ -588,6 +628,10 @@
 
   <script src="js/sb-admin-2.js"></script>
   <script src="js/household.js"></script>
+  <script src="js/filter-dropdown.min.js"></script>
+  <script src="js/sankey-Graph.min.js"></script>
+  <script src="js/sankey-Informations.min.js"></script>
+  <script src="js/sankey-filter.js"></script>
 
 </body>
 
