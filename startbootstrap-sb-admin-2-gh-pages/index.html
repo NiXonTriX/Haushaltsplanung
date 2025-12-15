@@ -29,7 +29,7 @@
 <body id="page-top" data-page="dashboard">
   <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Sidebar (Navbar) -->
     <ul class="navbar-nav bg-gradient-primary_new sidebar sidebar-dark accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -89,7 +89,7 @@
         </button>
       </div>
     </ul>
-    <!-- End of Sidebar -->
+    <!-- End of Sidebar (Navbar) -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -167,8 +167,9 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
+        <!-- End of Topbar (Sidebar) -->
 
+        <!-- Start Kachelausgabe -->
         <div class="container-fluid">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div>
@@ -179,8 +180,6 @@
               <i class="fas fa-plus fa-sm text-white-50"></i> Neue Buchung
             </a>
           </div>
-
-
 
 
           <div class="row">
@@ -321,7 +320,7 @@
             </div>
 
           </div>
-
+          <!-- End Kachelausgabe -->
 
           <!-- Sankey Chart Container (in deiner HTML-Struktur) -->
           <div class="row">
@@ -348,8 +347,10 @@
               </div>
             </div>
           </div>
+          <!-- Sankey Chart Container - END -->
 
 
+          <!-- Tabell - Ausgabeübersicht -->
           <div class="row">
             <div class="col-xl-8 col-lg-12 mb-4">
               <div class="card shadow mb-4 h-100">
@@ -456,7 +457,9 @@
                 </div>
               </div>
             </div>
+            <!-- Tabell - Ausgabeübersicht - END -->
 
+            <!-- Buchungsinformationen - Kann durch Grafik ersetzt werden -->
             <div class="col-xl-4 col-lg-12 mb-4">
               <div class="card shadow mb-4 h-100">
                 <div class="card-header py-3 d-flex align-items-center justify-content-between">
@@ -478,9 +481,9 @@
                 </div>
               </div>
             </div>
+            <!-- Buchungsinformationen - Kann durch Grafik ersetzt werden - END -->
 
-
-
+            <!-- PieChart -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -501,7 +504,9 @@
                 </div>
               </div>
             </div>
+            <!-- PieChart - END -->
 
+            <!-- Kontoübersicht -->
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -543,9 +548,9 @@
               </div>
             </div>
           </div>
+          <!-- Kontoübersicht - END -->
 
-
-
+          <!-- Fällig/Offene Buchungen -->
           <div class="row">
 
             <div class="col-lg-6 mb-4">
@@ -572,7 +577,9 @@
                 </div>
               </div>
             </div>
+            <!-- Fällig/Offene Buchungen - END -->
 
+            <!-- Übersicht Unterkategorien für Zuweisungen -->
             <div class="col-lg-6 mb-4">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-between align-items-center">
@@ -593,6 +600,7 @@
                 </div>
               </div>
             </div>
+            <!-- Übersicht Unterkategorien für Zuweisungen - END -->
 
           </div>
 
