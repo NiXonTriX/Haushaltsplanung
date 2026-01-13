@@ -30,3 +30,42 @@ So spielst du das aktuelle Schema (`db/schema.sql`) in eine MySQL/MariaDB-Instan
 - Beträge werden in Cent gespeichert (BIGINT) mit 3-stelliger Währung (Standard EUR).
 - Die Kategorien sind zweistufig; die View `vw_category_levels` hilft, tiefer geschachtelte Einträge zu finden.
 - Fremdschlüssel löschen abhängige Daten meist nicht, sondern setzen sie auf `NULL`, damit Historie erhalten bleibt; `booking_links` wird bei Löschungen der referenzierten Buchungen mit gelöscht.
+
+---
+
+## DB-Klasse (db.php)
+
+Zusätzlich gibt es eine kleine Singleton-DB-Klasse (`db/db.php`) zur einfachen Wiederverwendung einer PDO-Verbindung.
+
+Kurz:
+- Unterstützt MySQL und SQLite
+- Singleton-Pattern: `DB::getInstance()` liefert die Instanz
+- `getConnection()` liefert das `PDO`-Objekt
+
+Beispiel (Konstanten-Variante):
+
+```php
+define('DB_HOST','127.0.0.1');
+define('DB_NAME','haushalt');
+define('DB_USER','root');
+define('DB_PASS','');
+define('DB_CHARSET','utf8mb4');
+require_once __DIR__ . '/db.php';
+$pdo = DB::getInstance()->getConnection();
+```
+
+Oder beim ersten Aufruf konfigurieren:
+
+```php
+require_once __DIR__ . '/db.php';
+$pdo = DB::getInstance([
+  'driver' => 'mysql',
+  'host' => '127.0.0.1',
+  'dbname' => 'haushalt',
+  'user' => 'root',
+  'pass' => '',
+  'charset' => 'utf8mb4',
+])->getConnection();
+```
+
+Es gibt ein kurzes Beispielskript: `db/example_usage.php`.
