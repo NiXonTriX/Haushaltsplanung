@@ -5,7 +5,13 @@
   }
 
   const filterButtons = document.querySelectorAll("[data-booking-filter]");
-  const rows = Array.from(document.querySelectorAll("table tbody tr"));
+  function getRows() {
+    return Array.from(document.querySelectorAll("table tbody tr"));
+  }
+
+  let rows = getRows();
+
+
   const sumElement = document.getElementById("bookingSum");
   const filtersContainer = document.getElementById("bookingFilters");
   const toggleFiltersButton = document.getElementById("toggleFilters");
@@ -26,21 +32,10 @@
     return Number.isNaN(value) ? 0 : value;
   }
 
-  function classifyRows() {
-    rows.forEach((row) => {
-      const amountCell = row.querySelector("td:nth-child(6)");
-      const isExpense = amountCell && amountCell.classList.contains("text-danger");
-      const isIncome = amountCell && amountCell.classList.contains("text-success");
+function classifyRows() {
+  // Nichts mehr tun – DB liefert die Wahrheit
+}
 
-      if (isIncome) {
-        row.dataset.bookingType = "income";
-      } else if (isExpense) {
-        row.dataset.bookingType = "expense";
-      } else {
-        row.dataset.bookingType = "unknown";
-      }
-    });
-  }
 
   function setActiveButton(selectedType) {
     filterButtons.forEach((button) => {
@@ -53,14 +48,17 @@
   }
 
   function applyFilter(selectedType) {
+    rows = getRows(); // <- wichtig, für jede Änderung neu holen
+
     rows.forEach((row) => {
-      const type = row.dataset.bookingType;
+      const type = row.dataset.bookingType || "expense";
       const matches = selectedType === "all" || type === selectedType;
       row.style.display = matches ? "" : "none";
     });
 
     updateVisibleSum();
   }
+
 
   function updateVisibleSum() {
     const total = rows.reduce((sum, row) => {
@@ -71,7 +69,7 @@
       const amountCell = row.querySelector("td:nth-child(6)");
       const rawText = amountCell ? amountCell.textContent : "0";
       const value = parseEuro(rawText || "0");
-      const isExpense = amountCell && amountCell.classList.contains("text-danger");
+      const isExpense = (row.dataset.bookingType || "expense") === "expense";
 
       return sum + (isExpense ? -value : value);
     }, 0);

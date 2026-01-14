@@ -112,3 +112,38 @@
   background-color: #007bff;
   color: white;
 }
+
+
+.booking-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+}
+
+.booking-total {
+  text-align: right;
+  line-height: 1.2;
+
+  .label {
+    display: block;
+    font-size: .75rem;
+    color: #858796;
+  }
+
+  .value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #5a5c69;
+  }
+
+  @media (max-width: 576px) {
+    text-align: left;
+  }
+}
