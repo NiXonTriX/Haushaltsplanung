@@ -211,7 +211,7 @@ $repo = new Bookings();
               <p class="text-muted mb-0">Alle Haushaltsbuchungen mit Zuordnung zu Konten, Kategorien und Empfängern</p>
             </div>
             <div class="mt-3 mt-md-0">
-              <a href="booking-new.html" class="btn btn-primary btn-sm mr-2" aria-label="Neue Buchung anlegen">
+              <a href="booking-new.php" class="btn btn-primary btn-sm mr-2" aria-label="Neue Buchung anlegen">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>
                 Buchung anlegen
               </a>
@@ -475,7 +475,12 @@ $repo = new Bookings();
                           <!-- Überprüft, ob es sich um eine Ausgabe oder Einnahme handelt -->
                           <tr data-booking-type="<?php echo htmlspecialchars($booking['direction'] ?? 'expense'); ?>">
                             <td><?php echo htmlspecialchars($booking['booking_date'] ?? ''); ?></td>
-                            <td><?php echo htmlspecialchars($booking['title'] ?? ''); ?></td>
+                            <td>
+                            <!-- Titel klickbar machen, um über die Buchung-ID bearbeiten und löschen zu ermöglichen -->
+                            <a href="booking-detail.php?id=<?php echo (int)($booking['booking_id'] ?? 0); ?>">
+                              <?php echo htmlspecialchars($booking['title'] ?? ''); ?>
+                            </a>
+                          </td>
                             <td><?php echo $categoryText; ?></td>
                             <td><?php echo $personName; ?> — <?php echo $accountName; ?></td>
                             <td><?php echo htmlspecialchars($booking['payee_name'] ?? '-'); ?></td>
