@@ -144,8 +144,9 @@ public function selectOne(int $id): ?array
         }
 
         if (!empty($filter['category'])) {
-            $conditions[] = '(c.category_name LIKE :category_q OR cp.category_name LIKE :category_q)';
+            $conditions[] = '(c.category_name LIKE :category_q OR cp.category_name LIKE :category_parent_q)';
             $params['category_q'] = '%' . $filter['category'] . '%';
+            $params['category_parent_q'] = '%' . $filter['category'] . '%';
         }
 
 
