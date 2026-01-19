@@ -49,10 +49,10 @@ startbootstrap-sb-admin-2-gh-pages/vendor/
 # PROJECT / WORK FILES
 ##################################################
 
-# Database / mock data / schemas
-db/
-*.mwb
-*.sql
+### Database / mock data / schemas
+#db/
+#*.mwb
+#*.sql
 
 # Design assets
 *.pdf

@@ -32,10 +32,37 @@ foreach ($filters as $value) {
 
 $bookings = [];
 $errorMessage = null;
+// Platzhalter für Filteroptionen (DropDowns)
+$categoryOptions = [];
+$payeeOptions = [];
+$personOptions = [];
+$accountOptions = [];
 
 try {
-$repo = new Bookings();
+  $repo = new Bookings();
   $bookings = $hasFilters ? $repo->selectByFilter($filters) : $repo->selectAll();
+  $optionSource = $hasFilters ? $repo->selectAll() : $bookings;
+
+  $collectOptions = static function (array $rows, string $key): array {
+    $values = [];
+    foreach ($rows as $row) {
+      $value = trim((string) ($row[$key] ?? ''));
+      if ($value === '') {
+        continue;
+      }
+      $values[$value] = true;
+    }
+
+    $options = array_keys($values);
+    natcasesort($options);
+    return array_values($options);
+  };
+
+  $categoryOptions = $collectOptions($optionSource, 'category');
+  $payeeOptions = $collectOptions($optionSource, 'payee_name');
+  $personOptions = $collectOptions($optionSource, 'person_name');
+  $accountOptions = $collectOptions($optionSource, 'account_name');
+  // $bookings = $hasFilters ? $repo->selectByFilter($filters) : $repo->selectAll();
 } catch (Throwable $exception) {
   $errorMessage = $exception->getMessage();
 }
@@ -325,8 +352,15 @@ $repo = new Bookings();
                   <div class="form-row">
                     <div class="form-group col-md-3">
                       <label for="category">Kategorie</label>
-                      <input type="text" class="form-control" id="category" name="category" placeholder="z. B. Wohnen"
-                        value="<?php echo htmlspecialchars($filters['category']); ?>">
+                      <!-- DropDown - "Kategorie" -->
+                      <select class="form-control" id="category" name="category">
+                        <option value="">Alle</option>
+                        <?php foreach ($categoryOptions as $option) : ?>
+                          <option value="<?php echo htmlspecialchars($option); ?>" <?php echo $filters['category'] === $option ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($option); ?>
+                          </option>
+                        <?php endforeach; ?>
+                      </select>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="direction">Ein-/Ausgabe</label>
@@ -351,20 +385,41 @@ $repo = new Bookings();
                     </div>
                     <div class="form-group col-md-3">
                       <label for="payee">Empfänger</label>
-                      <input type="text" class="form-control" id="payee" name="payee" placeholder="z. B. Supermarkt"
-                        value="<?php echo htmlspecialchars($filters['payee']); ?>">
+                      <!-- DropDown - "Empfänger" -->
+                      <select class="form-control" id="payee" name="payee">
+                        <option value="">Alle</option>
+                        <?php foreach ($payeeOptions as $option) : ?>
+                          <option value="<?php echo htmlspecialchars($option); ?>" <?php echo $filters['payee'] === $option ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($option); ?>
+                          </option>
+                        <?php endforeach; ?>
+                      </select>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-3">
                       <label for="person">Person</label>
-                      <input type="text" class="form-control" id="person" name="person" placeholder="z. B. Lisa"
-                        value="<?php echo htmlspecialchars($filters['person']); ?>">
+                      <!-- DropDown - "Person" -->
+                      <select class="form-control" id="person" name="person">
+                        <option value="">Alle</option>
+                        <?php foreach ($personOptions as $option) : ?>
+                          <option value="<?php echo htmlspecialchars($option); ?>" <?php echo $filters['person'] === $option ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($option); ?>
+                          </option>
+                        <?php endforeach; ?>
+                      </select>
                     </div>
                     <div class="form-group col-md-3">
                       <label for="account">Konto</label>
-                      <input type="text" class="form-control" id="account" name="account" placeholder="z. B. Girokonto"
-                        value="<?php echo htmlspecialchars($filters['account']); ?>">
+                      <!-- DropDown - "Konto" -->
+                      <select class="form-control" id="account" name="account">
+                        <option value="">Alle</option>
+                        <?php foreach ($accountOptions as $option) : ?>
+                          <option value="<?php echo htmlspecialchars($option); ?>" <?php echo $filters['account'] === $option ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($option); ?>
+                          </option>
+                        <?php endforeach; ?>
+                      </select>
                     </div>
                     <div class="form-group col-md-6 d-flex align-items-end">
                       <div>
